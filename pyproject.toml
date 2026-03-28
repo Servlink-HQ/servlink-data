@@ -1,0 +1,31 @@
+[project]
+name = "servlink-data-engine"
+version = "0.1.0"
+description = "Data Engineering pipeline for ServLink BI Hub"
+requires-python = ">=3.11"
+authors = [
+    { name = "Servlink-HQ" }
+]
+readme = "README.md"
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "N", "UP", "B", "SIM", "RUF"]
+ignore = ["E501"]
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = "-v --tb=short"
